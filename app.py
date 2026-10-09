@@ -31,4 +31,6 @@ app = gr.Interface(
     description="Enter an email message to check whether it is spam or legitimate."
 )
 
-app.launch()
+import os
+
+app.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 10000)))
